@@ -1,5 +1,6 @@
 import random
-
+# need to add scoring style and point card/resoirce bool.
+#
 class Card:
   def __init__(self, type, resource):
     self.type = type
@@ -42,9 +43,12 @@ cardStackOne = []
 cardStackTwo = []
 cardStackThree = []
 
-createStack(cardStackOne)
-createStack(cardStackTwo)
-createStack(cardStackThree)
+Def dealStack:
+   createStack(cardStackOne)
+   createStack(cardStackTwo)
+   createStack(cardStackThree)
+
+DealStack()
 
 printStack(cardStackOne, "One")
 printStack(cardStackTwo, "Two")
