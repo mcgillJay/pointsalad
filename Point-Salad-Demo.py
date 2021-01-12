@@ -1,5 +1,5 @@
 import random
-# need to add scoring style and point card/resoirce bool.
+# need to add scoring style and point card/resource bool.
 #
 class Card:
   def __init__(self, type, resource):
@@ -37,6 +37,7 @@ stackSize = 5
 def addCard(targetStack):
   randNum = random.randint(0, len(resourceTypes)-1)
   resource = resourceTypes[randNum]
+  #what does Card("resource", resource) do? 
   card = Card("resource", resource)
   targetStack.append(card)
 
@@ -51,19 +52,24 @@ def printStack(targetStack, stackName):
   for x in targetStack:
     print(x.resource.name, x.resource.points, x.resource.color)
     
-cardStackOne = []
-Market1 = []
-cardStackTwo = []
-Market2 = []
-cardStackThree = []
-Market3 = []
-
+stacks =[
+  cardStackOne = []
+  cardStackTwo = []
+  cardStackThree = []
+]
+markets = [
+  marketOne = []
+  marketTwo = []
+  marketThree = []
+]
+         
 Def dealStack:
    createStack(cardStackOne)
    createStack(cardStackTwo)
    createStack(cardStackThree)
-   If market1 < 2:
-    Market1.append(CardStackOne.pop)
+    #will this work for moving point cards to resources? should probably be moved to a turnBegin/play function
+   while market1 < 2:
+    MarketOne.append(CardStackOne.pop)
 
 DealStack()
 
@@ -71,3 +77,5 @@ printStack(cardStackOne, "One")
 printStack(cardStackTwo, "Two")
 printStack(cardStackThree, "Three")
 
+playerOneCards = []
+playerTwoCards = []
