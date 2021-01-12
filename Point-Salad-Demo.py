@@ -40,13 +40,18 @@ def printStack(targetStack, stackName):
     print(x.resource.name, x.resource.points, x.resource.color)
     
 cardStackOne = []
+Market1 = []
 cardStackTwo = []
+Market2 = []
 cardStackThree = []
+Market3 = []
 
 Def dealStack:
    createStack(cardStackOne)
    createStack(cardStackTwo)
    createStack(cardStackThree)
+   If market1 < 2:
+    Market1.append(CardStackOne.pop)
 
 DealStack()
 
