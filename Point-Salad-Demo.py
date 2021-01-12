@@ -13,9 +13,21 @@ class Veggie:
     self.color = color
     
 resourceTypes = [
-    Veggie("Lettuce", 6, "Green"),
+    Veggie("Lettuce", 1, "Green"),
+    Veggie("Lettuce", 2, "Green"),
+    Veggie("Lettuce", 3, "Green"),
+    Veggie("Lettuce", 4, "Green"),
+    Veggie("Lettuce", 5, "Green"),
+    Veggie("Tomato", 1, "Red"),
     Veggie("Tomato", 2, "Red"),
+    Veggie("Tomato", 3, "Red"),
+    Veggie("Tomato", 4, "Red"),
+    Veggie("Tomato", 5, "Red"),
+    Veggie("Carrot", 1, "Orange"),
     Veggie("Carrot", 2, "Orange"),
+    Veggie("Carrot", 3, "Orange"),
+    Veggie("Carrot", 4, "Orange"),
+    Veggie("Carrot", 5, "Orange"),
     Veggie("Mystery", random.randint(1, 10), "Rainbow" )
   ]
 
