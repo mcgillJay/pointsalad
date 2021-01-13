@@ -69,15 +69,16 @@ def dealStack():
    
 dealStack()
 
-printStack(cardStackOne, "One")
-#printStack(cardStackTwo, "Two")
-#printStack(cardStackThree, "Three")
+printStack(board[0], "One")
+#printStack(board[1], "Two")
+#printStack(board[2], "Three")
 pause = input("pause")
 print(pause)
 
 #def beginTurn(zone):
     #will this work for moving point cards to resources? should probably be moved to a turnBegin/play function
-   # for x in markets:
+   # if len(board[3]) < 1:
+         Board[3].append(board[0][0])
   #      while x < 2:
    #        markets[x].append(stacks[x].pop)
 
