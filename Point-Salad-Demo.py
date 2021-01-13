@@ -51,26 +51,33 @@ def printStack(targetStack, stackName):
   print('------ Stack ' + stackName + ' ------')
   for x in targetStack:
     print(x.resource.name, x.resource.points, x.resource.color)
+
+#print the stack contents
+def printMarket(targetMarket, marketName):
+  print('------ Market ' + marketName + ' ------')
+  for x in targetMarket:
+    print(x.resource.name, x.resource.points, x.resource.color)
+
     
 cardStackOne = []
 cardStackTwo = []
 cardStackThree = []
 
-#stacks = [
-#cardStackOne,
-#cardStackTwo,
-#cardStackThree
-#]
+stacks = [
+cardStackOne,
+cardStackTwo,
+cardStackThree
+]
 
 marketOne = []
 marketTwo = []
 marketThree = []
 
-#markets = [
-#marketOne,
-#marketTwo,
-#marketThree
-#]
+markets = [
+marketOne,
+marketTwo,
+marketThree
+]
          
 def dealStack():
    createStack(cardStackOne)
@@ -80,12 +87,22 @@ def dealStack():
 dealStack()
 
 printStack(cardStackOne, "One")
-printStack(cardStackTwo, "Two")
-printStack(cardStackThree, "Three")
+#printStack(cardStackTwo, "Two")
+#printStack(cardStackThree, "Three")
+pause = input("pause")
+print(pause)
 
-#def beginTurn():
+#def beginTurn(zone):
     #will this work for moving point cards to resources? should probably be moved to a turnBegin/play function
- #   for x in markets:
+   # for x in markets:
   #      while x < 2:
-   #         markets[x].append(CardStackOne.pop)
+   #        markets[x].append(stacks[x].pop)
 
+
+
+while len(marketOne) <= 1:
+    marketOne.append(cardStackOne[0])
+    cardStackOne.pop(0)
+
+printStack(cardStackOne, "One")
+printMarket(marketOne, "One")
