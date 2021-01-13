@@ -52,30 +52,40 @@ def printStack(targetStack, stackName):
   for x in targetStack:
     print(x.resource.name, x.resource.points, x.resource.color)
     
-stacks =[
-  cardStackOne = []
-  cardStackTwo = []
-  cardStackThree = []
-]
-markets = [
-  marketOne = []
-  marketTwo = []
-  marketThree = []
-]
+cardStackOne = []
+cardStackTwo = []
+cardStackThree = []
+
+#stacks = [
+#cardStackOne,
+#cardStackTwo,
+#cardStackThree
+#]
+
+marketOne = []
+marketTwo = []
+marketThree = []
+
+#markets = [
+#marketOne,
+#marketTwo,
+#marketThree
+#]
          
-Def dealStack:
+def dealStack():
    createStack(cardStackOne)
    createStack(cardStackTwo)
    createStack(cardStackThree)
-    #will this work for moving point cards to resources? should probably be moved to a turnBegin/play function
-   while market1 < 2:
-    MarketOne.append(CardStackOne.pop)
-
-DealStack()
+   
+dealStack()
 
 printStack(cardStackOne, "One")
 printStack(cardStackTwo, "Two")
 printStack(cardStackThree, "Three")
 
-playerOneCards = []
-playerTwoCards = []
+#def beginTurn():
+    #will this work for moving point cards to resources? should probably be moved to a turnBegin/play function
+ #   for x in markets:
+  #      while x < 2:
+   #         markets[x].append(CardStackOne.pop)
+
