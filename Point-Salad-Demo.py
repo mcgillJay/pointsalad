@@ -1,5 +1,5 @@
 import random
-# need to add scoring style and point card/resoirce bool.
+# need to add scoring style and point card/resource bool.
 #
 class Card:
   def __init__(self, type, resource):
@@ -37,6 +37,7 @@ stackSize = 5
 def addCard(targetStack):
   randNum = random.randint(0, len(resourceTypes)-1)
   resource = resourceTypes[randNum]
+  #what does Card("resource", resource) do? 
   card = Card("resource", resource)
   targetStack.append(card)
 
@@ -50,24 +51,58 @@ def printStack(targetStack, stackName):
   print('------ Stack ' + stackName + ' ------')
   for x in targetStack:
     print(x.resource.name, x.resource.points, x.resource.color)
+
+#print the stack contents
+def printMarket(targetMarket, marketName):
+  print('------ Market ' + marketName + ' ------')
+  for x in targetMarket:
+    print(x.resource.name, x.resource.points, x.resource.color)
+
     
 cardStackOne = []
-Market1 = []
 cardStackTwo = []
-Market2 = []
 cardStackThree = []
-Market3 = []
 
-Def dealStack:
+stacks = [
+cardStackOne,
+cardStackTwo,
+cardStackThree
+]
+
+marketOne = []
+marketTwo = []
+marketThree = []
+
+markets = [
+marketOne,
+marketTwo,
+marketThree
+]
+         
+def dealStack():
    createStack(cardStackOne)
    createStack(cardStackTwo)
    createStack(cardStackThree)
-   If market1 < 2:
-    Market1.append(CardStackOne.pop)
-
-DealStack()
+   
+dealStack()
 
 printStack(cardStackOne, "One")
-printStack(cardStackTwo, "Two")
-printStack(cardStackThree, "Three")
+#printStack(cardStackTwo, "Two")
+#printStack(cardStackThree, "Three")
+pause = input("pause")
+print(pause)
 
+#def beginTurn(zone):
+    #will this work for moving point cards to resources? should probably be moved to a turnBegin/play function
+   # for x in markets:
+  #      while x < 2:
+   #        markets[x].append(stacks[x].pop)
+
+
+
+while len(marketOne) <= 1:
+    marketOne.append(cardStackOne[0])
+    cardStackOne.pop(0)
+
+printStack(cardStackOne, "One")
+printMarket(marketOne, "One")
