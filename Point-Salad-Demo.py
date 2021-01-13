@@ -58,31 +58,14 @@ def printMarket(targetMarket, marketName):
   for x in targetMarket:
     print(x.resource.name, x.resource.points, x.resource.color)
 
-    
-cardStackOne = []
-cardStackTwo = []
-cardStackThree = []
+board = [[],[],[],[],[],[],[],[],[]]  
 
-stacks = [
-cardStackOne,
-cardStackTwo,
-cardStackThree
-]
 
-marketOne = []
-marketTwo = []
-marketThree = []
-
-markets = [
-marketOne,
-marketTwo,
-marketThree
-]
          
 def dealStack():
-   createStack(cardStackOne)
-   createStack(cardStackTwo)
-   createStack(cardStackThree)
+   createStack(board[0])
+   createStack(board[1])
+   createStack(board[2])
    
 dealStack()
 
