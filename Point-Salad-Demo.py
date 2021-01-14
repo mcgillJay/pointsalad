@@ -1,3 +1,4 @@
+  
 import random
 # need to add scoring style and point card/resource bool.
 #
@@ -31,13 +32,16 @@ resourceTypes = [
     Veggie("Mystery", random.randint(1, 10), "Rainbow" )
   ]
 
+board = [[],[],[],[],[],[],[],[],[]]
+
 stackSize = 5
+
+######################################################
 
 #create and add a card
 def addCard(targetStack):
   randNum = random.randint(0, len(resourceTypes)-1)
   resource = resourceTypes[randNum]
-  #what does Card("resource", resource) do? 
   card = Card("resource", resource)
   targetStack.append(card)
 
@@ -51,58 +55,53 @@ def printStack(targetStack, stackName):
   print('------ Stack ' + stackName + ' ------')
   for x in targetStack:
     print(x.resource.name, x.resource.points, x.resource.color)
-
-#print the stack contents
-def printMarket(targetMarket, marketName):
-  print('------ Market ' + marketName + ' ------')
-  for x in targetMarket:
-    print(x.resource.name, x.resource.points, x.resource.color)
-
-    
-cardStackOne = []
-cardStackTwo = []
-cardStackThree = []
-
-stacks = [
-cardStackOne,
-cardStackTwo,
-cardStackThree
-]
-
-marketOne = []
-marketTwo = []
-marketThree = []
-
-markets = [
-marketOne,
-marketTwo,
-marketThree
-]
-         
+ 
 def dealStack():
-   createStack(cardStackOne)
-   createStack(cardStackTwo)
-   createStack(cardStackThree)
-   
+    createStack(board[0])
+    createStack(board[1])
+    createStack(board[2])
+
+#check if value is in market list and fill
+def dealMarket(y,x):
+    if len(board[x]) < 1:
+        board[x].append(board[y][0])
+        board[y].pop(0)
+
+#fill entire market
+def beginTurn():
+    dealMarket(0,3)
+    dealMarket(1,4)
+    dealMarket(2,5)
+    dealMarket(0,6)
+    dealMarket(1,7)
+    dealMarket(2,8)
+
+#data check full board
+def callStacks():
+    print("---------------------")
+    printStack(board[0], "One")
+    printStack(board[3], "Market One")
+    printStack(board[6], "Market One")
+    printStack(board[1], "Two")
+    printStack(board[4], "Market Two")
+    printStack(board[7], "Market Two")
+    printStack(board[2], "Three")
+    printStack(board[5], "Market Three")
+    printStack(board[8], "Market Three")
+
 dealStack()
 
-printStack(cardStackOne, "One")
-#printStack(cardStackTwo, "Two")
-#printStack(cardStackThree, "Three")
-pause = input("pause")
-print(pause)
+callStacks()
 
-#def beginTurn(zone):
-    #will this work for moving point cards to resources? should probably be moved to a turnBegin/play function
-   # for x in markets:
-  #      while x < 2:
-   #        markets[x].append(stacks[x].pop)
+beginTurn()
+
+callStacks()
 
 
 
-while len(marketOne) <= 1:
-    marketOne.append(cardStackOne[0])
-    cardStackOne.pop(0)
 
-printStack(cardStackOne, "One")
-printMarket(marketOne, "One")
+
+
+
+
+
