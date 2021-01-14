@@ -12,7 +12,9 @@ class Veggie:
     self.name = name
     self.points = points
     self.color = color
-    
+
+#shuffle cards
+#def shuffleCards():
 resourceTypes = [
     Veggie("Lettuce", 1, "Green"),
     Veggie("Lettuce", 2, "Green"),
@@ -36,7 +38,10 @@ board = [[],[],[],[],[],[],[],[],[]]
 
 stackSize = 5
 
+players = Input(enter player number? (2-6))
+players = 2
 ######################################################
+
 
 #create and add a card
 def addCard(targetStack):
@@ -44,6 +49,7 @@ def addCard(targetStack):
   resource = resourceTypes[randNum]
   card = Card("resource", resource)
   targetStack.append(card)
+  resourceTypes.pop(randNum)
 
 #populate a stack
 def createStack(targetStack):
