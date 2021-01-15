@@ -1,3 +1,6 @@
+#set up 2d array board = ((for i in 3) for j in 3)
+#set up pull common pull points for markets with classes. So lettuce.pos = board[0][0] 
+# if len(board[0][1]) < 1: lettuce.pos = board[0][1]
 class Board(list):
 
     def __str__(self):
