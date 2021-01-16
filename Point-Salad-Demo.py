@@ -2,6 +2,17 @@
 import random
 # need to add scoring style and point card/resource bool.
 #
+
+class Gameboard(list):
+  def __init__(self, stack, market)
+  def __str__(self, board):
+    w, h = 3, 3
+   board = ("0" for i in w) in h
+  " ".join(board)
+  return board
+
+print(board)
+  
 class Card:
   def __init__(self, type, resource):
     self.type = type
