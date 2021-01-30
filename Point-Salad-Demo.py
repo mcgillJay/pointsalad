@@ -40,14 +40,11 @@ resourceTypes = [
 class Game:
     x, y = (3, 3)
     stackSize = 5
+    board = []
 
     def __init__(self):
-        x = self.x
-        y = self.y
-        board = [[0]*x]*y
-        print(x)
-        print(y)
-        print(board)
+        self.board = [[0]*3]*3
+        print(self.board)
 
     #create and add a card
     def addCard(self, targetStack):
@@ -66,17 +63,28 @@ class Game:
 
     def dealStack(self):
         ### have a problem here not sure how best to move forward
-        board = self.board
-        self.createStack(board[0][0])
-        self.createStack(board[1][0])
-        self.createStack(board[2][0])
+        self.createStack(self.board[0][0])
+        self.createStack(self.board[1][0])
+        self.createStack(self.board[2][0])
+
+    def printBoard(self):
+        print('Current Board')
+        print(self.board)
+
+    def updateBoardPos(self, newValue,  x , y):
+        self.board[x][y] = newValue
         
 
-        
+new_game = Game()
 
-   
+new_game.printBoard()
 
-new_board = Game()
+new_game.updateBoardPos(6, 1, 2)
+
+new_game.printBoard()
+
+
+
 '''
 
 def dealMarket(y,x):
