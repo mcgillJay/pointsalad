@@ -1,7 +1,35 @@
-  
+
 import random
 # need to add scoring style and point card/resource bool.
 #
+
+board = [[],[],[],[],[],[],[],[],[]]
+
+
+
+class Game:
+    x, y = (3, 3)
+
+    def __init__(self):
+        x = self.x
+        y = self.y
+        board = [[0]*x]*y
+        print(x)
+        print(y)
+        print(board)
+
+    
+
+   
+
+new_board = Game()
+'''
+class Player:
+    def __init__(self, player, score, hand):
+        self.player = player
+        self.score = score
+        self.hand = hand
+
 class Card:
   def __init__(self, type, resource):
     self.type = type
@@ -13,8 +41,7 @@ class Veggie:
     self.points = points
     self.color = color
 
-#shuffle cards
-#def shuffleCards():
+
 resourceTypes = [
     Veggie("Lettuce", 1, "Green"),
     Veggie("Lettuce", 2, "Green"),
@@ -32,24 +59,29 @@ resourceTypes = [
     Veggie("Carrot", 4, "Orange"),
     Veggie("Carrot", 5, "Orange"),
     Veggie("Mystery", random.randint(1, 10), "Rainbow" )
-  ]
+]
 
-board = [[],[],[],[],[],[],[],[],[]]
 
-stackSize = 5
 
-players = Input(enter player number? (2-6))
-players = 2
+
+#stackSize = 5
+
+#veggieBuyers = []
+#players = Input("enter player number? (2-6)")
+#players = 2
+
 ######################################################
 
+def gameSet(players):
+    for x in players:
+        score = 
+        playerScore = Player("score", score[x])
+        veggieBuyers.append(playerScore)
+        players = players - 1 
+        
 
-#create and add a card
-def addCard(targetStack):
-  randNum = random.randint(0, len(resourceTypes)-1)
-  resource = resourceTypes[randNum]
-  card = Card("resource", resource)
-  targetStack.append(card)
-  resourceTypes.pop(randNum)
+
+
 
 #populate a stack
 def createStack(targetStack):
@@ -95,6 +127,9 @@ def callStacks():
     printStack(board[5], "Market Three")
     printStack(board[8], "Market Three")
 
+
+
+
 dealStack()
 
 callStacks()
@@ -105,8 +140,7 @@ callStacks()
 
 
 
-
-
+'''
 
 
 
