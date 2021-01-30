@@ -63,14 +63,14 @@ class Game:
         ###
         for x in range(stackSize):
             self.addCard(targetStack)
-'''
+
     def dealStack(self):
         ### have a problem here not sure how best to move forward
         board = self.board
         self.createStack(board[0][0])
         self.createStack(board[1][0])
         self.createStack(board[2][0])
-        '''
+        
 
         
 
