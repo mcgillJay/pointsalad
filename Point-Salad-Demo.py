@@ -1,24 +1,6 @@
 
 import random
 
-
-class Game:
-    x, y = (3, 3)
-
-    def __init__(self):
-        x = self.x
-        y = self.y
-        board = [[0]*x]*y
-        print(x)
-        print(y)
-        print(board)
-
-    
-
-   
-
-new_board = Game()
-'''
 class Player:
     def __init__(self, player, score, hand):
         self.player = player
@@ -35,7 +17,6 @@ class Veggie:
     self.name = name
     self.points = points
     self.color = color
-
 
 resourceTypes = [
     Veggie("Lettuce", 1, "Green"),
@@ -56,10 +37,58 @@ resourceTypes = [
     Veggie("Mystery", random.randint(1, 10), "Rainbow" )
 ]
 
+class Game:
+    x, y = (3, 3)
+    stackSize = 5
+
+    def __init__(self):
+        x = self.x
+        y = self.y
+        board = [[0]*x]*y
+        print(x)
+        print(y)
+        print(board)
+
+    #create and add a card
+    def addCard(self, targetStack):
+        randNum = random.randint(0, len(resourceTypes)-1)
+        resource = resourceTypes[randNum] 
+        card = Card("resource", resource)
+        targetStack.append(card)
+
+    #populate a stack
+    def createStack(self, targetStack):
+        ###
+        stackSize = self.stackSize
+        ###
+        for x in range(stackSize):
+            self.addCard(targetStack)
+'''
+    def dealStack(self):
+        ### have a problem here not sure how best to move forward
+        board = self.board
+        self.createStack(board[0][0])
+        self.createStack(board[1][0])
+        self.createStack(board[2][0])
+        '''
+
+        
+
+   
+
+new_board = Game()
+'''
+
+def dealMarket(y,x):
+    if len(board[x]) < 1:
+        board[x].append(board[y][0])
+        board[y].pop(0)
 
 
 
-#stackSize = 5
+
+
+
 
 #veggieBuyers = []
 #players = Input("enter player number? (2-6)")
@@ -78,10 +107,7 @@ def gameSet(players):
 
 
 
-#populate a stack
-def createStack(targetStack):
-  for x in range(stackSize):
-    addCard(targetStack)
+
 
 #print the stack contents
 def printStack(targetStack, stackName):
@@ -89,10 +115,7 @@ def printStack(targetStack, stackName):
   for x in targetStack:
     print(x.resource.name, x.resource.points, x.resource.color)
  
-def dealStack():
-    createStack(board[0])
-    createStack(board[1])
-    createStack(board[2])
+
 
 #check if value is in market list and fill
 def dealMarket(y,x):
