@@ -1,10 +1,5 @@
 
 import random
-# need to add scoring style and point card/resource bool.
-#
-
-board = [[],[],[],[],[],[],[],[],[]]
-
 
 
 class Game:
