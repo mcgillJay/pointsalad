@@ -39,9 +39,17 @@ resourceTypes = [
 
 class Board:
 
-    rowOne = [[6], [], [0]]
-    rowTwo = [[0], [], [0]]
-    rowThree = [[0], [], [0]]
+    rowOne = [[6,1,2], [], []]
+    rowTwo = [[6,1,2], [], []]
+    rowThree = [[6,1,2], [], []]
+
+    def rowReset(self, row):
+        if len(row[1]) < 1:
+            row[1] = row[0][0]
+            row[0].pop(0)
+        if len(row[2]) < 1:
+            row[2] = row[0][0]
+            row[0].pop(0)
     
     
     
@@ -83,15 +91,9 @@ class Game:
         print(Board.rowThree)
 
     def endTurn(self):
-        for rows in Board:
-            for 
-            if len(Board.rowOne[1]) < 1:
-                Board.rowOne[1] = Board.rowOne[0][0]
-                Board.rowOne[0].pop(0)
-        
-
-    #def updateBoardPos(self, newValue,  x , y):
-        #Board. = newValue
+        Board.rowReset(Board, Board.rowOne)
+        Board.rowReset(Board, Board.rowTwo)
+        Board.rowReset(Board, Board.rowThree)
         
 
 new_game = Game()
@@ -102,7 +104,7 @@ new_game.endTurn()
 
 new_game.printBoard()
 
-new_game.dealStack()
+#new_game.dealStack()
 
 new_game.printBoard()
 stall = input()
@@ -111,10 +113,6 @@ stall = input()
 
 '''
 
-def dealMarket(y,x):
-    if len(board[x]) < 1:
-        board[x].append(board[y][0])
-        board[y].pop(0)
 
 
 
@@ -164,18 +162,6 @@ def beginTurn():
     dealMarket(1,7)
     dealMarket(2,8)
 
-#data check full board
-def callStacks():
-    print("---------------------")
-    printStack(board[0], "One")
-    printStack(board[3], "Market One")
-    printStack(board[6], "Market One")
-    printStack(board[1], "Two")
-    printStack(board[4], "Market Two")
-    printStack(board[7], "Market Two")
-    printStack(board[2], "Three")
-    printStack(board[5], "Market Three")
-    printStack(board[8], "Market Three")
 
 
 
