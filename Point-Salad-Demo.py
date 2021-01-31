@@ -37,14 +37,23 @@ resourceTypes = [
     Veggie("Mystery", random.randint(1, 10), "Rainbow" )
 ]
 
+class Board:
+
+    rowOne = [[6], [], [0]]
+    rowTwo = [[0], [], [0]]
+    rowThree = [[0], [], [0]]
+    
+    
+    
+
+    
+
 class Game:
-    x, y = (3, 3)
     stackSize = 5
-    board = []
 
     def __init__(self):
-        self.board = [[0]*3]*3
-        print(self.board)
+        self.board = Board()
+        
 
     #create and add a card
     def addCard(self, targetStack):
@@ -63,25 +72,40 @@ class Game:
 
     def dealStack(self):
         ### have a problem here not sure how best to move forward
-        self.createStack(self.board[0][0])
-        self.createStack(self.board[1][0])
-        self.createStack(self.board[2][0])
+        self.createStack(Board.rowOne[0])
+        self.createStack(Board.rowTwo[0])
+        self.createStack(Board.rowThree[0])
 
     def printBoard(self):
         print('Current Board')
-        print(self.board)
+        print(Board.rowOne)
+        print(Board.rowTwo)
+        print(Board.rowThree)
 
-    def updateBoardPos(self, newValue,  x , y):
-        self.board[x][y] = newValue
+    def endTurn(self):
+        for rows in Board:
+            for 
+            if len(Board.rowOne[1]) < 1:
+                Board.rowOne[1] = Board.rowOne[0][0]
+                Board.rowOne[0].pop(0)
+        
+
+    #def updateBoardPos(self, newValue,  x , y):
+        #Board. = newValue
         
 
 new_game = Game()
 
 new_game.printBoard()
 
-new_game.updateBoardPos(6, 1, 2)
+new_game.endTurn()
 
 new_game.printBoard()
+
+new_game.dealStack()
+
+new_game.printBoard()
+stall = input()
 
 
 
